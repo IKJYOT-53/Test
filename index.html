@@ -39,9 +39,67 @@
         <img src="//unsplash.it/600/600" alt="" />
       </div>
     </section>
-    <section>
-      
+
+    <!-- Charts -->
+    <section class="chart">
+      <h1>STATS</h1>
+      <div>
+        <canvas id="myChart"></canvas>
+        <canvas id="secondChart"></canvas>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+
+  const labels = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'ADHD Patients',
+      backgroundColor: 'rgb(120, 81, 169)',
+      borderColor: 'rgb(120, 81, 169)',
+      data: [0, 10, 5, 2, 20, 30, 45],
+    }]
+  };
+
+  const data2 = {
+    labels: labels,
+    datasets: [{
+      label: 'Dyslexia Patients',
+      backgroundColor: 'rgb(120, 81, 169)',
+      borderColor: 'rgb(120, 81, 169)',
+      data: [0, 1, 5, 15, 10, 15, 30],
+    }]
+  };
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+  const config2={
+    type:'line',
+    data:data2,
+    options:{}
+  }
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  const secondChart = new Chart(
+    document.getElementById('secondChart'),
+    config2
+  )
+      </script>      
     </section>
+<!-- End of Charts -->
+
     <section id="container">
         <h1>OUR AIM</h1>
         <section class="third">
