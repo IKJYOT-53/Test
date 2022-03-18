@@ -8,12 +8,17 @@ tl.to(".third",{xPercent:-100})
 .to(".sixth",{xPercent:-200})
 .to(".seventh",{yPercent:-200});
 
-
 ScrollTrigger.create({
     animation:tl,
     trigger:"#container",
     end:"+=4000",
     scrub:true,
     pin:true,
-    anticipatePin:1
+    anticipatePin:1,
 });
+
+const menu = document.querySelector('.menu')
+const ul = document.querySelector('#ul')
+menu.addEventListener('click',()=>{
+    ul.classList.toggle('expand');
+})

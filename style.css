@@ -6,7 +6,15 @@
 :root {
   --clr-royal-purple: #7851a9;
 }
+
+.menu span {
+  background-color: white;
+  width: 80%;
+  height: 5px;
+  margin: 3px;
+}
 nav {
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,7 +87,14 @@ li a:hover {
   border-radius: 50%;
   width: min(30em, 100%);
 }
+.expand {
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+}
 @media screen and (max-width: 700px) {
+  nav {
+    overflow-x: hidden;
+  }
   .left a {
     font-size: 20px;
   }
@@ -87,7 +102,37 @@ li a:hover {
     font-size: 10px;
   }
   nav ul {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: RGBA(120, 81, 169, 0.7);
+    transition: all 0.5s ease-in-out;
+  }
+  nav li {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  nav li a {
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+  .menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--clr-royal-purple);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 5;
   }
 }
 .our-aim {
